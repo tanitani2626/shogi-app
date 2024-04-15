@@ -11,6 +11,7 @@ class ShogiController extends Controller
     public function index()
     {
         $appName = '将棋アプリ';
-        return view('shogi/index', compact('appName'));
+        $MyKing = 59; // 追加
+        return view('shogi/index', compact('appName', 'MyKing')); // ビューにも渡す
     }
 }
