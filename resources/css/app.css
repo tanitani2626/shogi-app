@@ -1,0 +1,12 @@
+.selected {
+    background-color: yellow;
+}
+
+.way {
+    background-color: red;
+}
+
+.piece {
+    font-size: 30px;
+    font-weight: bold;
+}

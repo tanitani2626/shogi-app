@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShogiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('shogi', 'App\Http\Controllers\ShogiController@index');
+Route::get('/', [ShogiController::class, 'index']);
+Route::get('/shogi', [ShogiController::class, 'index']);
+Route::get('shogi/select/{piece}', 'App\Http\Controllers\ShogiController@select');
+Route::post('shogi', 'App\Http\Controllers\ShogiController@index');
+
