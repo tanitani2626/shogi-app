@@ -17,5 +17,5 @@ use App\Http\Controllers\ShogiController;
 Route::get('/', [ShogiController::class, 'index']);
 Route::get('/shogi', [ShogiController::class, 'index']);
 Route::get('shogi/select/{piece}', 'App\Http\Controllers\ShogiController@select');
-Route::post('shogi', 'App\Http\Controllers\ShogiController@index');
+Route::post('/shogi', [ShogiController::class, 'index']);
 

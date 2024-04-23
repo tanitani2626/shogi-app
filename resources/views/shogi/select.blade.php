@@ -14,9 +14,14 @@
                 echo '<div class="column column' . $c . '" id="column' . $c . '">';
                 for ($r = 9; $r > 0; $r--) {
                     $square = $r . $c;
-                    if ($square == $MyKing) {
-                        // 駒マス
-                        echo '<p class="piece row square' . $square . ' selected" id="square' . $square . '">王</p>';
+                    if ($square == $bKing['square']) {
+                        // 駒マス「王将」
+                        echo '<p class="piece row turnb square' . $square . ' selected" id="square' . $square . '">王</p>';
+                        echo '<input type="hidden" value="' . $bKing['turn'] . '" name="turn" id="data' . $square . '"></input>';
+                    } elseif ($square == $wKing['square']) {
+                        // 駒マス「玉将」
+                        echo '<p class="piece turnw row square' . $square . ' selected" id="square' . $square . '">玉</p>';
+                        echo '<input type="hidden" value="' . $bKing['turn'] . '" name="turn" id="data' . $square . '"></input>';
                     } elseif (in_array($square, $way)) {
                         // 移動可能マス 送信されるデータはここにしかない
                         echo '<input type="hidden" value="' . $square . '" name="square" id="data' . $square . '"></input>';

@@ -16,3 +16,7 @@
     table-layout: fixed;
     height: 60px;
 }
+
+.turnw {
+    transform:rotate(180deg);
+}
